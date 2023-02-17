@@ -1,0 +1,7 @@
+[alias]
+  dag = log --color --graph --pretty=format:'%C(yellow)%h%Creset -%C(blue)<%an> <%ae>%Creset %C(magenta)%cr%C(reset) %C(auto)%d%C(reset)%n%s' --abbrev-commit 
+[init]
+	defaultBranch = master
+[user]
+	name = kdplus
+	email = yuxivision@gmail.com
