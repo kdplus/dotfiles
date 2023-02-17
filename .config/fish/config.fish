@@ -28,7 +28,6 @@ set -gx PATH ~/.local/bin $PATH
 
 # nvim && lvim
 set -gx EDITOR lvim
-set -gx PATH /usr/local/nvim-linux64/bin $PATH
 
 # cargo && rustc
 set -gx PATH $HOME/.cargo/bin $PATH
@@ -37,6 +36,20 @@ set -gx PATH $HOME/.cargo/bin $PATH
 if type -q exa
   alias ll "exa -l -g --icons"
   alias lla "ll -a"
+end
+
+switch (uname)
+  case Darwin
+    source (dirname (status --current-filename))/config-osx.fish
+  case Linux
+    source (dirname (status --current-filename))/config-linux.fish
+  case '*'
+    source (dirname (status --current-filename))/config-windows.fish
+end
+
+set LOCAL_CONFIG (dirname (status --current-filename))/config-local.fish
+if test -f $LOCAL_CONFIG
+  source $LOCAL_CONFIG
 end
 
 # startship
