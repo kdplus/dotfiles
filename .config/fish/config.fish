@@ -53,7 +53,9 @@ starship init fish | source
 # exa
 if type -q exa
   alias ll "exa -l -g --icons"
+  alias llt "ll -snew"
   alias lla "ll -a"
+  alias llat "ll -a -snew"
   abbr --add llag ll -a --git
 end
 
