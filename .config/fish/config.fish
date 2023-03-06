@@ -42,7 +42,6 @@ switch (uname -r)
     source (dirname (status --current-filename))/config-wsl2.fish
 end
   
-
 set LOCAL_CONFIG (dirname (status --current-filename))/config-local.fish
 if test -f $LOCAL_CONFIG
   source $LOCAL_CONFIG
@@ -58,5 +57,3 @@ if type -q exa
   abbr --add llag ll -a --git
 end
 
-# pyenv
-pyenv init - | source
