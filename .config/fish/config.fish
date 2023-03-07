@@ -59,3 +59,7 @@ if type -q exa
   abbr --add llag ll -a --git
 end
 
+# conda env
+abbr --add ca conda activate 
+abbr --add cda conda deactivate 
+
