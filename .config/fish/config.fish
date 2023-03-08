@@ -17,6 +17,10 @@ alias lla "ll -A"
 alias g git
 alias vim lvim
 
+# Get External IP / Internet Speed
+alias myip="curl https://ipinfo.io/json" # or /ip for plain-text ip
+alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
+
 set -gx PATH $HOME/.local/bin $PATH
 set -gx PATH bin $PATH
 set -gx PATH ~/bin $PATH
