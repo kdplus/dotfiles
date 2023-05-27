@@ -32,7 +32,7 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 -- -- Change theme settings
 lvim.colorscheme = "lunar"
-lvim.transparent_window = true
+lvim.transparent_window = false
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
@@ -115,6 +115,13 @@ lvim.autocommands = {
       group = "lvim_user",
       pattern = "*.cpp",
       command = "setlocal ts=4 sw=4",
+    },
+  },
+  {
+    { "BufWritePre" },
+    {
+      group = "lvim_user",
+      command = [[silent! %s/\r//g]],
     },
   },
 }
