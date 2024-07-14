@@ -15,7 +15,7 @@ alias la "ls -A"
 alias ll "ls -l"
 alias lla "ll -A"
 alias g git
-alias vim lvim
+alias vim nvim
 
 # get external IP / internet speed
 alias myip="curl https://ipinfo.io/json" # or /ip for plain-text ip
@@ -33,22 +33,22 @@ set -gx EDITOR lvim
 set -gx PATH $HOME/.cargo/bin $PATH
 
 switch (uname)
-  case Darwin
-    source (dirname (status --current-filename))/config-osx.fish
-  case Linux
-    source (dirname (status --current-filename))/config-linux.fish
-  case '*'
-    source (dirname (status --current-filename))/config-windows.fish
+    case Darwin
+        source (dirname (status --current-filename))/config-osx.fish
+    case Linux
+        source (dirname (status --current-filename))/config-linux.fish
+    case '*'
+        source (dirname (status --current-filename))/config-windows.fish
 end
 
 switch (uname -r)
-  case '*WSL2'
-    source (dirname (status --current-filename))/config-wsl2.fish
+    case '*WSL2'
+        source (dirname (status --current-filename))/config-wsl2.fish
 end
-  
+
 set LOCAL_CONFIG (dirname (status --current-filename))/config-local.fish
 if test -f $LOCAL_CONFIG
-  source $LOCAL_CONFIG
+    source $LOCAL_CONFIG
 end
 
 # startship
@@ -56,14 +56,13 @@ starship init fish | source
 
 # exa
 if type -q exa
-  alias ll "exa -l -g --icons"
-  alias llt "ll -snew"
-  alias lla "ll -a"
-  alias llat "ll -a -snew"
-  abbr --add llag ll -a --git
+    alias ll "exa -l -g --icons"
+    alias llt "ll -snew"
+    alias lla "ll -a"
+    alias llat "ll -a -snew"
+    abbr --add llag ll -a --git
 end
 
 # conda env
-abbr --add ca conda activate 
-abbr --add cda conda deactivate 
-
+abbr --add ca conda activate
+abbr --add cda conda deactivate
